@@ -8,6 +8,7 @@ defmodule NewsletterCodeChallenge.Coherence.User do
   schema "users" do
     field :name, :string, default: "Subscriber"
     field :email, :string
+    field :role, :string, default: "subscriber"
     coherence_schema()
 
     timestamps()
