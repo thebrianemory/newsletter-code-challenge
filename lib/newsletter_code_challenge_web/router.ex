@@ -1,5 +1,6 @@
 defmodule NewsletterCodeChallengeWeb.Router do
   use NewsletterCodeChallengeWeb, :router
+  use Coherence.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -7,10 +8,16 @@ defmodule NewsletterCodeChallengeWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug Coherence.Authentication.Session
   end
 
   pipeline :api do
     plug :accepts, ["json"]
+  end
+
+  scope "/" do
+    pipe_through :browser
+    coherence_routes()
   end
 
   scope "/", NewsletterCodeChallengeWeb do
