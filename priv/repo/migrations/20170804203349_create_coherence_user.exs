@@ -5,6 +5,7 @@ defmodule NewsletterCodeChallenge.Repo.Migrations.CreateCoherenceUser do
 
       add :name, :string, default: "Subscriber"
       add :email, :string
+      add :role, :string, default: "subscriber"
       # authenticatable
       add :password_hash, :string
       # unlockable_with_token
