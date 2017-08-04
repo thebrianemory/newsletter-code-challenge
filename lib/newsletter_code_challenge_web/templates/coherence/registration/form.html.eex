@@ -27,7 +27,7 @@
 
   <%= if Coherence.Config.require_current_password and not is_nil(@changeset.data.id) do %>
     <div class="form-group">
-      <%= hidden_input f, :password_confirmation, class: "form-control", required: "", value: "doesntmatteratallreally" %>
+      <%= hidden_input f, :current_password, class: "form-control", required: "", value: "doesntmatteratallreally" %>
       <%= error_tag f, :current_password %>
     </div>
   <% end %>
