@@ -51,8 +51,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :newsletter_code_challenge, NewsletterCodeChallenge.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "brianemory",
+  password: "",
   database: "newsletter_code_challenge_dev",
   hostname: "localhost",
   pool_size: 10
