@@ -3,7 +3,7 @@ defmodule NewsletterCodeChallenge.Repo.Migrations.CreateCoherenceUser do
   def change do
     create table(:users) do
 
-      add :name, :string
+      add :name, :string, default: "Subscriber"
       add :email, :string
       # authenticatable
       add :password_hash, :string

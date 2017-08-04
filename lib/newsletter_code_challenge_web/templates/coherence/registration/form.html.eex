@@ -6,11 +6,6 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= hidden_input f, :name, class: "form-control", value: "subscriber", required: "" %>
-    <%= error_tag f, :name %>
-  </div>
-
   <%= unless (login_field = Coherence.Config.login_field) == :email do %>
     <div class="form-group">
       <%= required_label f, login_field, class: "control-label" %>

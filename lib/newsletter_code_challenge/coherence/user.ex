@@ -6,7 +6,7 @@ defmodule NewsletterCodeChallenge.Coherence.User do
   
 
   schema "users" do
-    field :name, :string
+    field :name, :string, default: "Subscriber"
     field :email, :string
     coherence_schema()
 
