@@ -26,6 +26,10 @@ config :logger, :console,
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
 
+config :newsletter_code_challenge, NewsletterCodeChallenge.Mailer,
+  adapter: Swoosh.Adapters.Sendgrid,
+  api_key: {:system, "API_KEY"}
+
 # %% Coherence Configuration %%   Don't remove this line
 config :coherence,
   user_schema: NewsletterCodeChallenge.Coherence.User,
