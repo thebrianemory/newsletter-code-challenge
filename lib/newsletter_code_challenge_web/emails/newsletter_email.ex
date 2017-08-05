@@ -1,9 +1,9 @@
 defmodule NewsletterCodeChallenge.NewsletterEmail do
   import Swoosh.Email
 
-  def newsletter(users, params) do
+  def newsletter(user, params) do
     new()
-    |> to({"Brian", "the@brianemory.com"})
+    |> to({user.name, user.email})
     |> from({"Code Challenge", "newsletter.code.challenge@gmail.com"})
     |> subject(params["newsletter"]["subject"])
     |> text_body(params["newsletter"]["body"])
