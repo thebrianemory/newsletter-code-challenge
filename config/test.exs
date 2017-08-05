@@ -17,3 +17,6 @@ config :newsletter_code_challenge, NewsletterCodeChallenge.Repo,
   database: "newsletter_code_challenge_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+config :newsletter_code_challenge, NewsletterCodeChallengeWeb.SendgridMailer,
+  adapter: Swoosh.Adapters.Test
