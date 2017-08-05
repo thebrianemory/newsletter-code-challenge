@@ -10,4 +10,12 @@ defmodule NewsletterCodeChallenge.Factory do
       role: "admin"
     }
   end
+
+  def user_factory do
+    %User{
+      email: "user@example.com",
+      password: "userpass",
+      password_confirmation: "userpass"
+    }
+  end
 end
