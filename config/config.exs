@@ -35,11 +35,11 @@ config :coherence,
   router: NewsletterCodeChallengeWeb.Router,
   messages_backend: NewsletterCodeChallengeWeb.Coherence.Messages,
   logged_out_url: "/",
-  email_from_name: "Your Name",
-  email_from_email: "yourname@example.com",
+  email_from_name: "Code Challenge",
+  email_from_email: "newsletter.code.challenge@gmail.com",
   opts: [:authenticatable, :unlockable_with_token, :confirmable, :registerable]
 
 config :coherence, NewsletterCodeChallengeWeb.Coherence.Mailer,
   adapter: Swoosh.Adapters.Sendgrid,
-  api_key: "your api key here"
+  api_key: {:system, "API_KEY"}
 # %% End Coherence Configuration %%
