@@ -13,5 +13,9 @@ defmodule NewsletterCodeChallengeWeb.NewsletterController do
     users = User |> Repo.all
     |> NewsletterEmail.newsletter(params)
     |> SendgridMailer.deliver
+
+    conn
+    |> put_flash(:success, "Your newsletter was successfully sent!")
+    |> redirect(to: newsletter_path(conn, :new))
   end
 end
