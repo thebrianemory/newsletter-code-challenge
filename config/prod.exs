@@ -24,7 +24,7 @@ config :newsletter_code_challenge, NewsletterCodeChallengeWeb.Endpoint,
 config :logger, level: :info
 
 # Configure your database
-config :newsletter_code_challenge, NewsletterCodeChallenge,
+config :newsletter_code_challenge, NewsletterCodeChallenge.Repo,
   adapter: Ecto.Adapters.Postgres,
   url: System.get_env("DATABASE_URL"),
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
