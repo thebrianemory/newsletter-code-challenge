@@ -4,13 +4,13 @@ defmodule NewsletterCodeChallengeWeb.PageControllerTest do
   use ExUnit.Case, async: true
 
   describe "GET /" do
-    test "visitor gets redirected to the newsletteer sign up page", %{conn: conn} do
+    test "redirects visitor to the newsletter sign up page", %{conn: conn} do
       conn = get conn, "/"
       assert html_response(conn, 302)
       assert redirected_to(conn) == registration_path(conn, :new)
     end
 
-    test "signed in admin sees the create newsletter button", %{conn: conn} do
+    test "shows the button for creating a newsletter to a signed in admin", %{conn: conn} do
       admin = insert(:admin)
 
       conn = conn
