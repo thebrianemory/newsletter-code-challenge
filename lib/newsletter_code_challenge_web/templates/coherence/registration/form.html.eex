@@ -38,7 +38,8 @@
   </div>
 
   <div class="form-group">
-    <%= submit @label, class: "btn btn-primary" %>
+    <%= submit "Sign up", class: "btn btn-primary" %>
     <%= link dgettext("coherence", "Cancel"), to: Coherence.Config.logged_out_url("/"), class: "btn" %>
+    <%= link "Resend confirmation email", to: "/confirmations/new" %>
   </div>
 <% end %>

@@ -1,4 +1,5 @@
-<h3><%= dgettext "coherence", "Register Account" %></h3>
+<h3><%= dgettext "coherence", "Sign up for my newsletter" %></h3>
+<p><%= link "Admin login", to: session_path(@conn, :new) %>
 
 <%= render "form.html", changeset: @changeset,
                         label: dgettext("coherence", "Register"), required: [required: ""],
