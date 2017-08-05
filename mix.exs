@@ -41,7 +41,9 @@ defmodule NewsletterCodeChallenge.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
-      {:coherence, "~> 0.5"}
+      {:coherence, "~> 0.5"},
+      {:swoosh, "~> 0.9.0"},
+      {:gen_smtp, "~> 0.12.0"}
     ]
   end
 
