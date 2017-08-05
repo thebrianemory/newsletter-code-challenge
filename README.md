@@ -8,4 +8,4 @@ Keep in mind that in a real-life scenario, there may be 10-100k subscribers, so 
 ## Bonus points if:
  - [x] Subscription is confirmed by sending an email with a ‘Confirm your subscription’ link
  - [ ] A newsletter can be scheduled to be sent at any time in the future (usually, newsletters are sent in a biweekly or monthly schedule)
- - [ ] Automated testing is included
+ - [x] Automated testing is included
