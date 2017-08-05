@@ -43,7 +43,8 @@ defmodule NewsletterCodeChallenge.Mixfile do
       {:cowboy, "~> 1.0"},
       {:coherence, "~> 0.5"},
       {:swoosh, "~> 0.9.0"},
-      {:gen_smtp, "~> 0.12.0"}
+      {:gen_smtp, "~> 0.12.0"},
+      {:ex_machina, "~> 2.0"}
     ]
   end
 
