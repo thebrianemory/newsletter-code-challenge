@@ -10,7 +10,7 @@ defmodule NewsletterCodeChallengeWeb.NewsletterController do
   end
 
   def create(conn, params) do
-    users = User |> Repo.all
+    User |> Repo.all
     |> NewsletterEmail.newsletter(params)
     |> SendgridMailer.deliver
 
