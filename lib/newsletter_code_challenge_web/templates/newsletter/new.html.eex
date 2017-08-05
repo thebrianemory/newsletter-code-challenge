@@ -1,18 +1,22 @@
-<h1>Create a newsletter</h1>
+<%= if @conn.assigns[:current_user].role == "admin" do %>
+  <h1>Create a newsletter</h1>
 
-<%= form_for @conn, newsletter_path(@conn, :create), [as: :newsletter], fn f -> %>
+  <%= form_for @conn, newsletter_path(@conn, :create), [as: :newsletter], fn f -> %>
 
-  <div class="form-group">
-    <%= label f, "Subject", class: "control-label" %>
-    <%= text_input f, :subject, class: "form-control", required: "" %>
-  </div>
+    <div class="form-group">
+      <%= label f, "Subject", class: "control-label" %>
+      <%= text_input f, :subject, class: "form-control", required: "" %>
+    </div>
 
-  <div class="form-group">
-    <%= label f, "Body", class: "control-label" %>
-    <%= textarea f, :body, class: "form-control", required: "" %>
-  </div>
+    <div class="form-group">
+      <%= label f, "Body", class: "control-label" %>
+      <%= textarea f, :body, class: "form-control", required: "" %>
+    </div>
 
-  <div class="form-group">
-    <%= submit "Send newsletter", class: "btn btn-primary" %>
-  </div>
+    <div class="form-group">
+      <%= submit "Send newsletter", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+<% else %>
+  <h1>Bugger off!</h1>
 <% end %>

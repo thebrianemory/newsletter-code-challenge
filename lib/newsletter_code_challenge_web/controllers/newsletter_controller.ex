@@ -7,7 +7,12 @@ defmodule NewsletterCodeChallengeWeb.NewsletterController do
   alias NewsletterCodeChallenge.Repo
 
   def new(conn, _params) do
-    render(conn, "new.html")
+    if conn.assigns.current_user do
+      render(conn, "new.html")
+    else
+      conn
+      |> redirect(to: registration_path(conn, :new))
+    end
   end
 
   def create(conn, params) do
