@@ -10,7 +10,9 @@ defmodule NewsletterCodeChallenge.Mixfile do
       compilers: [:phoenix, :gettext] ++ Mix.compilers,
       start_permanent: Mix.env == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: ["coveralls": :test, "coveralls.detail": :test, "coveralls.post": :test, "coveralls.html": :test]
     ]
   end
 
@@ -44,7 +46,8 @@ defmodule NewsletterCodeChallenge.Mixfile do
       {:coherence, "~> 0.5"},
       {:swoosh, "~> 0.9.0"},
       {:gen_smtp, "~> 0.12.0"},
-      {:ex_machina, "~> 2.0"}
+      {:ex_machina, "~> 2.0"},
+      {:excoveralls, "~> 0.7", only: :test}
     ]
   end
 
