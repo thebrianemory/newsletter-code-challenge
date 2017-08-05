@@ -1,6 +1,5 @@
 defmodule NewsletterCodeChallengeWeb.NewsletterController do
   use NewsletterCodeChallengeWeb, :controller
-  use Task
 
   alias NewsletterCodeChallenge.NewsletterEmail
   alias NewsletterCodeChallengeWeb.SendgridMailer
