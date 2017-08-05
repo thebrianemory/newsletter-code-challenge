@@ -1,7 +1,7 @@
 <%= if @conn.assigns[:current_user].role == "admin" do %>
 <h1>Hello <%= Coherence.current_user_name(@conn) %></h1>
 
-<h3>Send a newsletter</h3>
+<%= link "Create a newsletter", to: newsletter_path(@conn, :new), class: "btn btn-primary" %>
 <% else %>
   <h1>Bugger off!</h1>
 <% end %>
