@@ -24,7 +24,7 @@ defmodule NewsletterCodeChallengeWeb.Coherence.UserEmail do
     |> from(from_email())
     |> to(user_email(user))
     |> add_reply_to()
-    |> subject(dgettext("coherence", "%{site_name} - Confirm your subscription", site_name: site_name()))
+    |> subject(dgettext("coherence", "%{site_name} - Confirm your new account", site_name: site_name()))
     |> render_body("confirmation.html", %{url: url, name: first_name(user.name)})
   end
 
