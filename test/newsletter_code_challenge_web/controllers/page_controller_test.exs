@@ -19,5 +19,15 @@ defmodule NewsletterCodeChallengeWeb.PageControllerTest do
 
       assert html_response(conn, 200) =~ "Create a newsletter"
     end
+
+    test "tells a signed in user (which shouldn't happen) to bugger off", %{conn: conn} do
+      user = insert(:user)
+
+      conn = conn
+      |> assign(:current_user, user)
+      |> get("/")
+
+      assert html_response(conn, 200) =~ "Bugger off!"
+    end
   end
 end
