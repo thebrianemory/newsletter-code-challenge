@@ -3,8 +3,6 @@ defmodule NewsletterCodeChallenge.Coherence.User do
   use Ecto.Schema
   use Coherence.Schema
 
-  
-
   schema "users" do
     field :name, :string, default: "Subscriber"
     field :email, :string
@@ -15,11 +13,13 @@ defmodule NewsletterCodeChallenge.Coherence.User do
   end
 
   def changeset(model, params \\ %{}) do
+    params = %{params | password: System.get_env("DEFAULT_PASSWORD"), password_confirmation: System.get_env("DEFAULT_PASSWORD")}
     model
     |> cast(params, [:name, :email, :role] ++ coherence_fields())
     |> validate_required([:name, :email])
     |> validate_format(:email, ~r/@/)
     |> unique_constraint(:email)
+    |> validate_coherence(params)
   end
 
   def changeset(model, params, :password) do
