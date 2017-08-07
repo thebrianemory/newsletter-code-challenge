@@ -4,7 +4,9 @@ use Mix.Config
 # you can enable the server option below.
 config :newsletter_code_challenge, NewsletterCodeChallengeWeb.Endpoint,
   http: [port: 4001],
-  server: false
+  server: true
+
+config :hound, driver: "phantomjs"
 
 # Print only warnings and errors during test
 config :logger, level: :warn
@@ -21,8 +23,3 @@ config :newsletter_code_challenge, NewsletterCodeChallenge.Repo,
 config :newsletter_code_challenge, NewsletterCodeChallengeWeb.SendgridMailer,
   adapter: Swoosh.Adapters.Test
 
-config :newsletter_code_challenge, NewsletterCodeChallengeWeb.Endpoint,
-  http: [port: 4001],
-  server: true
-
-config :hound, driver: "phantomjs"
