@@ -20,3 +20,9 @@ config :newsletter_code_challenge, NewsletterCodeChallenge.Repo,
 
 config :newsletter_code_challenge, NewsletterCodeChallengeWeb.SendgridMailer,
   adapter: Swoosh.Adapters.Test
+
+config :newsletter_code_challenge, NewsletterCodeChallengeWeb.Endpoint,
+  http: [port: 4001],
+  server: true
+
+config :hound, driver: "phantomjs"
