@@ -20,7 +20,6 @@ defmodule NewsletterCodeChallenge.Coherence.User do
     |> validate_required([:name, :email])
     |> validate_format(:email, ~r/@/)
     |> unique_constraint(:email)
-    |> validate_coherence(params)
   end
 
   def changeset(model, params, :password) do

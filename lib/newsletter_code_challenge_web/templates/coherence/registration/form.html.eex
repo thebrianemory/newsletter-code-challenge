@@ -20,23 +20,6 @@
     <%= error_tag f, :email %>
   </div>
 
-  <%= if Coherence.Config.require_current_password and not is_nil(@changeset.data.id) do %>
-    <div class="form-group">
-      <%= hidden_input f, :current_password, class: "form-control", required: "", value: "doesntmatteratallreally" %>
-      <%= error_tag f, :current_password %>
-    </div>
-  <% end %>
-
-  <div class="form-group">
-    <%= hidden_input f, :password, class: "form-control", required: "", value: "doesntmatteratallreally" %>
-    <%= error_tag f, :password %>
-  </div>
-
-  <div class="form-group">
-    <%= hidden_input f, :password_confirmation, class: "form-control", required: "", value: "doesntmatteratallreally" %>
-    <%= error_tag f, :password_confirmation %>
-  </div>
-
   <div class="form-group">
     <%= submit "Sign up", class: "btn btn-primary" %>
     <%= link dgettext("coherence", "Cancel"), to: Coherence.Config.logged_out_url("/"), class: "btn" %>
