@@ -31,6 +31,27 @@ defmodule NewsletterCodeChallengeWeb.AdminTest do
   end
 
   test "allows a logged in admin to create a newsletter" do
-    
+    build(:admin) |> set_password("dummypassword") |> Repo.insert!
+    navigate_to("/sessions/new")
+    find_element(:id, "session_email")
+    |> fill_field("admin@example.com")
+    find_element(:id, "session_password")
+    |> fill_field("dummypassword")
+    find_element(:id, "signin_button")
+    |> click()
+
+    find_element(:id, "create_newsletter_button")
+    |> click()
+
+    find_element(:id, "subject_field")
+    |> fill_field("Hello all!")
+
+    find_element(:id, "body_field")
+    |> fill_field("This is a test email")
+
+    find_element(:id, "send_newsletter_button")
+    |> click()
+
+    assert page_source() =~ "Your newsletter was successfully sent!"
   end
 end
