@@ -47,7 +47,8 @@ defmodule NewsletterCodeChallenge.Mixfile do
       {:swoosh, "~> 0.9.0"},
       {:gen_smtp, "~> 0.12.0"},
       {:ex_machina, "~> 2.0"},
-      {:excoveralls, "~> 0.7", only: :test}
+      {:excoveralls, "~> 0.7", only: :test},
+      {:hound, "~> 1.0"}
     ]
   end
 

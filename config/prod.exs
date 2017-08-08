@@ -30,6 +30,10 @@ config :newsletter_code_challenge, NewsletterCodeChallenge.Repo,
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
   ssl: true
 
+config :newsletter_code_challenge, NewsletterCodeChallengeWeb.SendgridMailer,
+  adapter: Swoosh.Adapters.Sendgrid,
+  api_key: {:system, "API_KEY"}
+
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key

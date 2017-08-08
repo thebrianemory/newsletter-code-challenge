@@ -5,16 +5,16 @@
 
     <div class="form-group">
       <%= label f, "Subject", class: "control-label" %>
-      <%= text_input f, :subject, class: "form-control", required: "" %>
+      <%= text_input f, :subject, id: "subject_field", class: "form-control", required: "" %>
     </div>
 
     <div class="form-group">
       <%= label f, "Body", class: "control-label" %>
-      <%= textarea f, :body, class: "form-control", required: "" %>
+      <%= textarea f, :body, id: "body_field", class: "form-control", required: "" %>
     </div>
 
     <div class="form-group">
-      <%= submit "Send newsletter", class: "btn btn-primary" %>
+      <%= submit "Send newsletter", id: "send_newsletter_button", class: "btn btn-primary" %>
     </div>
   <% end %>
 <% else %>

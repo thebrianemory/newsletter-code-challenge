@@ -56,3 +56,8 @@ config :newsletter_code_challenge, NewsletterCodeChallenge.Repo,
   database: "newsletter_code_challenge_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :newsletter_code_challenge, NewsletterCodeChallengeWeb.SendgridMailer,
+  adapter: Swoosh.Adapters.Sendgrid,
+  api_key: {:system, "API_KEY"}
+
