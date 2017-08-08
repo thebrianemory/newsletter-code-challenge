@@ -18,4 +18,9 @@ defmodule NewsletterCodeChallenge.Factory do
       password_confirmation: "userpass"
     }
   end
+
+  def set_password(user, password) do
+    hashed_password = Comeonin.Bcrypt.hashpwsalt(password)
+    %{user | password_hash: hashed_password}
+  end
 end
