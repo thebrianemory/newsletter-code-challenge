@@ -5,8 +5,7 @@ defmodule NewsletterCodeChallenge.Factory do
   def admin_factory do
     %User{
       email: "admin@example.com",
-      password: "adminpass",
-      password_confirmation: "adminpass",
+      confirmed_at: Ecto.DateTime.utc,
       role: "admin"
     }
   end

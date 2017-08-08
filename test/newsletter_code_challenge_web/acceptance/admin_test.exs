@@ -2,7 +2,6 @@ defmodule NewsletterCodeChallengeWeb.AdminTest do
   use ExUnit.Case, async: true
   use Hound.Helpers
 
-  alias NewsletterCodeChallenge.Coherence.User
   alias NewsletterCodeChallenge.Repo
   import NewsletterCodeChallenge.Factory
 
@@ -16,7 +15,7 @@ defmodule NewsletterCodeChallengeWeb.AdminTest do
   end
 
   test "allows an admin to login" do
-    build(:admin, confirmed_at: Ecto.DateTime.utc) |> set_password("dummypassword") |> Repo.insert!
+    build(:admin) |> set_password("dummypassword") |> Repo.insert!
     navigate_to("/sessions/new")
 
     find_element(:id, "session_email")
