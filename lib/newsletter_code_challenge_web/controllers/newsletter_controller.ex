@@ -21,6 +21,7 @@ defmodule NewsletterCodeChallengeWeb.NewsletterController do
       NewsletterEmail.newsletter(&1, params)
       |> SendgridMailer.deliver
     end))
+    |> Enum.map(&Task.await/1)
 
     conn
     |> put_flash(:success, "Your newsletter was successfully sent!")
