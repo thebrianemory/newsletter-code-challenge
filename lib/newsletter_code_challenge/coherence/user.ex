@@ -27,4 +27,10 @@ defmodule NewsletterCodeChallenge.Coherence.User do
     |> cast(params, ~w(password password_confirmation reset_password_token reset_password_sent_at))
     |> validate_coherence_password_reset(params)
   end
+
+  # Used in iex to update an admin with a password so they can log in
+  def admin_password_update(user, password) do
+    hashed_password = Comeonin.Bcrypt.hashpwsalt(password)
+    %{user | password_hash: hashed_password}
+  end
 end
